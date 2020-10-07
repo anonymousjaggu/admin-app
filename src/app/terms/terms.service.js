@@ -37,7 +37,7 @@ angular.module('supportAdminApp')
         return TERMS_V5_API_URL;
       };
 
-      
+
       /**
        * Search the list of terms of use
        * @param  {Object} options    the search criteria including filter and pagination params
@@ -63,7 +63,7 @@ angular.module('supportAdminApp')
         return deferred.promise;
       };
 
-      
+
       /**
        * Create terms of use
        * @param  {Object} entity    the terms of use entity to create
@@ -106,7 +106,7 @@ angular.module('supportAdminApp')
         });
         return deferred.promise;
       }
-      
+
       /**
        * Find the terms of use by Id
        * @param {String}  id  the uuid of the terms entity to retrieve
@@ -114,10 +114,7 @@ angular.module('supportAdminApp')
       TermsService.findTermsById = function(termsId) {
         var deferred = $q.defer();
         $http({
-          url: TermsService.getBasePath() + '/terms/' + termsId,
-          params: {
-            noauth: true
-          }
+          url: TermsService.getBasePath() + '/terms/' + termsId
         }).then(function (response) {
           deferred.resolve(response.data);
         }).catch(function (error) {
@@ -125,7 +122,7 @@ angular.module('supportAdminApp')
         });
         return deferred.promise;
       }
-      
+
       /**
        * Delete the terms of use by Id
        * @param {String}  id  the uuid of the terms entity to delete
